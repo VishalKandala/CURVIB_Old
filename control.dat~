@@ -1,0 +1,112 @@
+-dt 0.06 #//0.0005
+-totalsteps 3000 #2000
+-d_taw 0.01
+#-rstart 590
+#-rstart_fem 1
+-imm 1
+-thin 0
+-tio 10
+-ren 778
+-cfl 0.3
+-vnn 0.03
+-imp 3
+-imp_type 3
+
+-imp_MAX_IT 20
+-imp_atol  1.e-8
+-imp_rtol  1.e-2
+-imp_stol  1.e-8
+-inlet 1
+-init1 1
+-mframe 0
+-les 0
+-wallfunction 0
+-inv_flg 1
+-bhv 0
+-twoD 0
+-cl 1.
+-char_length_ibm 0.04
+
+-grid 1
+-im 101
+-jm 101 #121
+-km 281 #301
+-L_x 4
+-L_y 4
+-L_z 11.2
+-period 3000
+-body 1
+
+-fsi 0
+-str 0
+-St_exp 0.017
+-wlngth 0.5 
+-reg 0 
+
+-red_vel 0.
+-damp    0.0
+-mu_s    1200 #7155.635
+-x_c     0.
+-y_c     0.
+-z_c     0.
+-radi 40
+
+-snes_max_it 20
+-ksp_type fgmres
+#-ksp_max_it 10
+#-snes_rtol 1.e-9
+#-snes_atol 1.e-9
+-snes_monitor
+-pc_type jacobi
+#-ksp_rtol 1.e-6
+
+#-snes_mf
+
+-mg_k_semi 1
+-mg_j_semi 0
+-mg_i_semi 0
+
+-ps_ksp_type fgmres
+#-ps_ksp_gmres_restart 20
+#-ps_pc_type jacobi
+-ps_ksp_atol 1.e-5
+-ps_ksp_rtol 1.e-11
+-ps_ksp_max_it 40
+-ps_ksp_monitor_true_residual
+#-ps_ts_monitor
+#-ps_ksp_converged_reason
+#-ps_ksp_monitor_singular_value
+#-ps_ksp_log
+#-ps_ksp_view
+#-ps_pc_type svd
+#-ps_pc_svd_monitor
+
+
+-ps_mg_levels_1_ksp_type richardson
+-ps_mg_levels_2_ksp_type richardson
+-ps_mg_levels_3_ksp_type fgmres
+#---------------------------------------FEM
+-E 1.88e3
+-mu 0.
+-rho 1694.9
+-h0 1.5e-2
+-nbody 1
+
+-explicit 0
+-damping 0
+-dampfactor 1.05e-2
+-fem_scale 1.0
+
+-twod 0
+-membrane 1
+-bending 1
+-ConstitutiveLawNonLinear 0
+-outghost 0
+-contact 0
+
+-fem_snes_mf
+#-fem_snes_type aspin
+-fem_snes_max_it 20
+#-fem_snes_atol 1.e-9
+-fem_snes_monitor
+
